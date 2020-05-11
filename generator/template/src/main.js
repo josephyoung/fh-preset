@@ -4,6 +4,7 @@ import router from './router';
 import store from './store';
 import _ from 'lodash';
 import './element-ui';
+import './injects';
 
 Vue.config.productionTip = false;
 
