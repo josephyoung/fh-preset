@@ -1,0 +1,25 @@
+/**
+ * 全局样式
+ */
+
+.clearfix::after {
+  content: '';
+  clear: both;
+  display: block;
+}
+
+.dn {
+  display: none;
+}
+
+.df {
+  display: flex;
+}
+
+.dib {
+  display: inline-block;
+}
+
+.h100p {
+  height: 100%;
+}

@@ -1,0 +1,9 @@
+/* 改变主题色变量 示例 */
+$--color-primary: #3071ff;
+$--color-warning: #f90;
+
+/* 改变 icon 字体路径变量，必需 示例 */
+$--font-path: '~element-ui/lib/theme-chalk/fonts';
+
+/* 如果以上有改变, 则取消下行注释 */
+@import '~element-ui/packages/theme-chalk/src/index';
