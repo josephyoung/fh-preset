@@ -27,7 +27,7 @@ export default {
   methods: {
     ...mapActions(['changeMessage']),
 
-    handleClick(subject) {
+    handleClick() {
       console.log(this.message);
       this.changeMessage();
     }

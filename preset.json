@@ -9,14 +9,15 @@
     "@vue/cli-plugin-eslint": {
       "config": "prettier",
       "lintOn": ["save", "commit"]
-    }
+    },
+    "@vue/cli-plugin-unit-jest": {}
   },
-  "@vue/cli-plugin-unit-jest": {},
   "cssPreprocessor": "dart-sass",
   "configs": {
     "scripts": {
       "serve": "vue-cli-service serve",
       "build": "vue-cli-service build",
+      "test:unit": "vue-cli-service test:unit",
       "lint": "vue-cli-service lint"
     },
     "eslintConfig": {
@@ -42,7 +43,18 @@
         "no-var": 1,
         "no-sequences": 2,
         "no-console": 0
-      }
+      },
+      "overrides": [
+        {
+          "files": [
+            "**/__tests__/*.{j,t}s?(x)",
+            "**/tests/unit/**/*.spec.{j,t}s?(x)"
+          ],
+          "env": {
+            "jest": true
+          }
+        }
+      ]
     },
     "prettier": {
       "printWidth": 120,
@@ -70,11 +82,14 @@
       "Android >= 4",
       "iOs >= 8"
     ],
+    "jest": {
+      "preset": "@vue/cli-plugin-unit-jest"
+    },
     "gitHooks": {
       "pre-commit": "lint-staged"
     },
     "lint-staged": {
-      "*.{js,vue}": ["vue-cli-service lint", "git add"]
+      "*.{js,jsx,vue}": ["vue-cli-service lint", "git add"]
     },
     "vue": {
       "configureWebpack": {
@@ -91,8 +106,7 @@
         }
       },
       "productionSourceMap": true,
-      "lintOnSave": "error",
-      "transpileDependencies": [["element-ui"], ["lodash"]]
+      "lintOnSave": "error"
     }
   }
 }

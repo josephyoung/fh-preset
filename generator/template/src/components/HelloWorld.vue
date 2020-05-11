@@ -16,7 +16,7 @@ export default {
 
   methods: {
     handleClick() {
-      this.$emit('click', 'Vue');
+      this.$emit('click');
     }
   }
 };
