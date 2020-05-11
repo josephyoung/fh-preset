@@ -1,6 +1,6 @@
 # fh-preset
 
-A preset for create standard vue-cli 4.x project.
+A preset for vue-cli 4.x
 
 ## Features
 
