@@ -78,7 +78,9 @@
       "since 2016",
       "edge >= 12",
       "not ie <= 10",
-      "not dead"
+      "not dead",
+      "Android >= 4",
+      "iOs >= 8"
     ],
     "jest": {
       "preset": "@vue/cli-plugin-unit-jest"
