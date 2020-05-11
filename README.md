@@ -13,7 +13,7 @@ A preset for vue-cli 4.x
 ### remote
 
 ```bash
-$ vue create --preset https://github.com/josephyoung/fh-preset.git my-project
+$ vue create --preset josephyoung/fh-preset my-project
 ```
 
 #### local
