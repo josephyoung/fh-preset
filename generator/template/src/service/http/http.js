@@ -8,6 +8,7 @@ function httpFactory({ origin = false } = {}) {
 
   http.interceptors.request.use(
     config => {
+      // blob请求返回原始response
       if (/[Bb]lob/.test(config.responseType)) {
         sendOriginResponse = true;
       }
@@ -15,7 +16,7 @@ function httpFactory({ origin = false } = {}) {
       return config;
     },
     e => {
-      console.error({ e });
+      errorHandler(e, `接口 ${_.get(e, 'config.url')} `, '发送错误, 请检查网络后重试');
       return Promise.reject(e);
     }
   );
@@ -28,10 +29,19 @@ function httpFactory({ origin = false } = {}) {
 
       return Vue.prototype.$lodash.get(resp, 'data');
     },
-    e => Promise.reject(e)
+    e => {
+      errorHandler(e, `接口 ${_.get(e, 'config.url')} `, '返回错误, 请检查网络后重试');
+      return Promise.reject(e);
+    }
   );
 
   return http;
 }
 
-export default httpFactory();
+// 返回response.data
+const http = httpFactory();
+
+// 返回原始response, 用于需要response原始返回值的场合, 如: 异步下载获取headers中的filename
+const httpOrigin = httpFactory({ origin: true });
+
+export { http, httpOrigin };
