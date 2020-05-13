@@ -31,6 +31,10 @@
         "eslint:recommended",
         "@vue/prettier"
       ],
+      "globals": {
+        "_": true,
+        "qs": true
+      },
       "parserOptions": {
         "parser": "babel-eslint",
         "ecmaFeatures": {
@@ -57,7 +61,7 @@
       ]
     },
     "prettier": {
-      "printWidth": 120,
+      "printWidth": 100,
       "tabWidth": 2,
       "tabs": false,
       "semi": true,
@@ -106,7 +110,14 @@
         }
       },
       "productionSourceMap": true,
-      "lintOnSave": "error"
+      "lintOnSave": "error",
+      "css": {
+        "loaderOptions": {
+          "scss": {
+            "prependData": "\n@import \"~@/style/global.scss\";\n@import \"~@/style/variables.scss\";\n@import \"~@/style/reset.scss\";\n"
+          }
+        }
+      }
     }
   }
 }
