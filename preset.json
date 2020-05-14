@@ -18,7 +18,8 @@
       "serve": "vue-cli-service serve",
       "build": "vue-cli-service build",
       "test:unit": "vue-cli-service test:unit",
-      "lint": "vue-cli-service lint"
+      "lint": "vue-cli-service lint",
+      "mock": "./node_modules/.bin/serve ./src/api/mock"
     },
     "eslintConfig": {
       "root": true,
@@ -115,6 +116,17 @@
         "loaderOptions": {
           "scss": {
             "prependData": "\n@import \"~@/style/global.scss\";\n@import \"~@/style/variables.scss\";\n@import \"~@/style/reset.scss\";\n"
+          }
+        }
+      },
+      "devServer": {
+        "proxy": {
+          "/mock": {
+            "target": "http://localhost:5000",
+            "changeOrigin": true,
+            "pathRewrite": {
+              "^/mock": ""
+            }
           }
         }
       }
