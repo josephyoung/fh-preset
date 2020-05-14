@@ -5,6 +5,7 @@ export default [
   {
     path: '/page-template',
     name: 'page-template',
-    component: () => import(/* webpackChunkName: "other-routes" */ '@/views/PageTemplate'),
+    component: () =>
+      import(/* webpackChunkName: "other-routes" */ '@/views/PageTemplate'),
   },
 ];

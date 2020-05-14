@@ -6,7 +6,7 @@ import getRoutes from './getRoutes';
 import routerAdd from './routerAdd';
 import store from '@/store';
 
-export default router => {
+export default (router) => {
   router.beforeEach((to, from, next) => {
     // 对比sessionStorage与store里的值,判断页面是刷新过的
     if (store.getters.auth && !store.state._auth) {
