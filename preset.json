@@ -99,6 +99,7 @@
     },
     "vue": {
       "configureWebpack": {
+        "name": "fh-preset",
         "devtool": "source-map"
       },
       "publicPath": "/",
