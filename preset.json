@@ -19,7 +19,8 @@
       "build": "vue-cli-service build",
       "test:unit": "vue-cli-service test:unit",
       "lint": "vue-cli-service lint",
-      "mock": "./node_modules/.bin/serve ./src/api/mock"
+      "mock": "./node_modules/.bin/serve ./src/api/mock",
+      "preview": "./node_modules/.bin/serve -s ./dist"
     },
     "eslintConfig": {
       "root": true,
