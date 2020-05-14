@@ -15,22 +15,21 @@ const { mapState, mapGetters, mapActions } = createNamespacedHelpers('example');
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+    HelloWorld,
   },
 
   computed: {
     ...mapState(['message']),
 
-    ...mapGetters(['sentence'])
+    ...mapGetters(['sentence']),
   },
 
   methods: {
     ...mapActions(['changeMessage']),
 
-    handleClick() {
-      console.log(this.message);
+    async handleClick() {
       this.changeMessage();
-    }
-  }
+    },
+  },
 };
 </script>
