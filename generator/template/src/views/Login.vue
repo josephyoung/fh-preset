@@ -23,7 +23,7 @@
 import routerAdd from '@/router/routerAdd';
 import getRoutes from '@/router/getRoutes';
 import routerReset from '@/router/routerReset.js';
-import getMenus from '@/api/mock/menus';
+import getMenus from '@/api/mocks/menus';
 
 export default {
   name: 'Login',

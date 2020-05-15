@@ -19,7 +19,7 @@
       "build": "vue-cli-service build",
       "test:unit": "vue-cli-service test:unit",
       "lint": "vue-cli-service lint",
-      "mock": "./node_modules/.bin/serve ./mock",
+      "mock": "./node_modules/.bin/serve ./mocks",
       "preview": "./node_modules/.bin/serve -s ./dist"
     },
     "eslintConfig": {
