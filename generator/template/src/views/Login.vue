@@ -23,6 +23,8 @@
 import routerAdd from '@/router/routerAdd';
 import getRoutes from '@/router/getRoutes';
 import routerReset from '@/router/routerReset.js';
+import getMenus from '@/api/mock/menus';
+
 export default {
   name: 'Login',
   computed: {
@@ -32,7 +34,7 @@ export default {
   },
   methods: {
     async routerGen() {
-      const menus = await this.$http.get('mock/menus.json');
+      const menus = await getMenus(this);
       this.$store.commit('setAuth', true);
       this.$store.commit('setMenus', menus);
       const routes = getRoutes(menus);

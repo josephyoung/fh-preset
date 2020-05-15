@@ -19,7 +19,7 @@
       "build": "vue-cli-service build",
       "test:unit": "vue-cli-service test:unit",
       "lint": "vue-cli-service lint",
-      "mock": "./node_modules/.bin/serve ./src/api/mock",
+      "mock": "./node_modules/.bin/serve ./mock",
       "preview": "./node_modules/.bin/serve -s ./dist"
     },
     "eslintConfig": {
@@ -97,42 +97,6 @@
     },
     "lint-staged": {
       "*.{js,jsx,vue}": ["vue-cli-service lint", "git add"]
-    },
-    "vue": {
-      "configureWebpack": {
-        "name": "中文项目名",
-        "devtool": "source-map"
-      },
-      "publicPath": "/",
-      "outputDir": "dist",
-      "assetsDir": "",
-      "pages": {
-        "index": {
-          "entry": "src/main.js",
-          "template": "public/index.html",
-          "filename": "index.html"
-        }
-      },
-      "productionSourceMap": true,
-      "lintOnSave": "error",
-      "css": {
-        "loaderOptions": {
-          "scss": {
-            "prependData": "@import \"~@/style/variables.scss\";"
-          }
-        }
-      },
-      "devServer": {
-        "proxy": {
-          "/mock": {
-            "target": "http://localhost:5000",
-            "changeOrigin": true,
-            "pathRewrite": {
-              "^/mock": ""
-            }
-          }
-        }
-      }
     }
   }
 }

@@ -1,14 +1,48 @@
 {
-	"version": "2.0.0",
-	"tasks": [
-		{
-			"type": "npm",
-			"script": "serve",
-			"problemMatcher": [
-				"$eslint-compact"
-			],
-			"label": "npm: serve",
-			"detail": "vue-cli-service serve"
-		}
-	]
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "npm",
+      "script": "serve",
+      "problemMatcher": ["$eslint-compact"],
+      "label": "npm: serve",
+      "detail": "vue-cli-service serve"
+    },
+    {
+      "type": "npm",
+      "script": "mock",
+      "problemMatcher": ["$eslint-compact"],
+      "label": "npm: mock",
+      "detail": "./node_modules/.bin/serve ./src/api/mock"
+    },
+    {
+      "type": "npm",
+      "script": "lint",
+      "problemMatcher": ["$eslint-compact"],
+      "label": "npm: lint",
+      "detail": "vue-cli-service lint"
+    },
+    {
+      "type": "npm",
+      "script": "test:unit",
+      "problemMatcher": ["$eslint-compact"],
+      "label": "npm: test:unit",
+      "detail": "vue-cli-service test:unit"
+    },
+    {
+      "type": "npm",
+      "script": "build",
+      "problemMatcher": ["$eslint-compact"],
+      "group": "build",
+      "label": "npm: build",
+      "detail": "vue-cli-service build"
+    },
+    {
+      "type": "npm",
+      "script": "preview",
+      "problemMatcher": ["$eslint-compact"],
+      "label": "npm: preview",
+      "detail": "./node_modules/.bin/serve -s ./dist"
+    }
+  ]
 }

@@ -1,0 +1,20 @@
+[
+  {
+    "path": "/about",
+    "title": "关于",
+    "children": [
+      {
+        "path": "page-template",
+        "title": "模板"
+      }
+    ]
+  },
+  {
+    "path": "/home",
+    "title": "首页"
+  },
+  {
+    "path": "/page-template",
+    "title": "页面模板"
+  }
+]
