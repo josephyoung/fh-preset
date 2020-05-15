@@ -118,7 +118,7 @@
       "css": {
         "loaderOptions": {
           "scss": {
-            "prependData": "@import \"~@/style/variables.scss\""
+            "prependData": "@import \"~@/style/variables.scss\";"
           }
         }
       },
