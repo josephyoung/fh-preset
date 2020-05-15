@@ -21,7 +21,7 @@ export default {
   name: 'About',
   methods: {
     handleConfirmClick() {
-      this.$http.get('mock/cart.json').then(resp => {
+      this.$http.get('mock/menus.json').then(resp => {
         console.log({ resp }, this.$router);
       });
     },

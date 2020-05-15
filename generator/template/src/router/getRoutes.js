@@ -39,6 +39,14 @@ const filterRoutes = (routes, menus, filtered = []) => {
     for (const menu of menus) {
       if (identity(route)(menu)) {
         const { children: routeChildren, ...rest } = route;
+        const title = _.get(menu, 'title');
+        if (title) {
+          if (rest.meta) {
+            rest.meta.title = title;
+          } else {
+            rest.meta = { title };
+          }
+        }
         filtered.push(rest);
         const menuChildren = _.get(menu, 'children');
         if (!_.isEmpty(routeChildren) && !_.isEmpty(menuChildren)) {

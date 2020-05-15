@@ -32,7 +32,7 @@ export default {
   },
   methods: {
     async routerGen() {
-      const menus = await this.$http.get('mock/cart.json');
+      const menus = await this.$http.get('mock/menus.json');
       this.$store.commit('setAuth', true);
       this.$store.commit('setMenus', menus);
       const routes = getRoutes(menus);
