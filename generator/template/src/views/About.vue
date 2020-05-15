@@ -1,10 +1,18 @@
 <template>
   <div id="about">
-    <h1>This is an about page</h1>
-    <el-button type="primary" @click="handleConfirmClick">confirm</el-button>
-    <el-button type="warning" @click="handleCancelClick">cancel</el-button>
-    <router-link to="/about/page-template">children</router-link>
-    <router-view></router-view>
+    <h1>
+      This is an about page
+    </h1>
+    <el-button type="primary" @click="handleConfirmClick">
+      confirm
+    </el-button>
+    <el-button type="warning" @click="handleCancelClick">
+      cancel
+    </el-button>
+    <router-link to="/about/page-template">
+      children
+    </router-link>
+    <router-view />
   </div>
 </template>
 

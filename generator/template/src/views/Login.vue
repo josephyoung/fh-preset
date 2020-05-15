@@ -1,9 +1,21 @@
 <template>
   <div class="login-outer tac">
-    <el-button type="primary" @click="handleLoginClick" v-if="showLogin" key="log-button"
-      >login</el-button
+    <el-button
+      type="primary"
+      @click="handleLoginClick"
+      v-if="showLogin"
+      key="log-button"
     >
-    <el-button type="warning" @click="handleLogoutClick" v-else key="log-button">logout</el-button>
+      login
+    </el-button>
+    <el-button
+      type="warning"
+      @click="handleLogoutClick"
+      v-else
+      key="log-button"
+    >
+      logout
+    </el-button>
   </div>
 </template>
 

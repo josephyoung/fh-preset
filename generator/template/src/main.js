@@ -2,6 +2,7 @@ import _ from 'lodash';
 import qs from 'qs';
 import Vue from 'vue';
 import './element-ui';
+import './style/index.scss';
 import App from './App.vue';
 import router from './router';
 import store from './store';
@@ -12,5 +13,5 @@ Vue.config.productionTip = false;
 new Vue({
   router,
   store,
-  render: (h) => h(App),
+  render: h => h(App),
 }).$mount('#app');

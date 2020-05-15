@@ -63,7 +63,7 @@
       ]
     },
     "prettier": {
-      "printWidth": 100,
+      "printWidth": 80,
       "tabWidth": 2,
       "tabs": false,
       "semi": true,
@@ -74,9 +74,10 @@
       "bracketSpacing": true,
       "jsxBracketSameLine": false,
       "arrowParens": "avoid",
-      "htmlWhitespaceSensitivity": "css",
+      "htmlWhitespaceSensitivity": "ignore",
       "vueIndentScriptAndStyle": false,
-      "endOfLine": "lf"
+      "endOfLine": "lf",
+      "proseWrap": "always"
     },
     "browserslist": [
       "> 1%",
@@ -117,7 +118,7 @@
       "css": {
         "loaderOptions": {
           "scss": {
-            "prependData": "\n@import \"~@/style/variables.scss\";\n@import \"~@/style/global.scss\";\n@import \"~@/style/reset.scss\";\n"
+            "prependData": "@import \"~@/style/variables.scss\""
           }
         }
       },

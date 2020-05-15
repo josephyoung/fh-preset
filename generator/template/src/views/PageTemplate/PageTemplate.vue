@@ -1,5 +1,7 @@
 <template>
-  <div class="tac">page template</div>
+  <div class="tac">
+    page template
+  </div>
 </template>
 
 <script>
