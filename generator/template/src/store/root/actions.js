@@ -6,6 +6,8 @@ export default {
     commit('setMenus', []);
     commit('setAuth', false);
     routerReset(true);
-    router.push('/login');
+    if (_.get(router, 'history.current.name') !== 'login') {
+      router.push('/login');
+    }
   },
 };

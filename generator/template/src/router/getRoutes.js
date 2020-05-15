@@ -16,12 +16,37 @@ const routes = _.reduce(
 /* path相同或name相同被认为是重复路由 */
 const identity = route1 => route2 => route1.name === route2.name || route1.path === route2.path;
 
-for (let index = 0; index < routes.length; index++) {
-  const route = routes[index];
-  if (index !== _.findIndex(routes, identity(route))) {
-    throw new RouteDuplicationError(`路由 ${route.name || route.path} 重复,请检查配置`);
+const checkDuplication = routes => {
+  for (let index = 0; index < routes.length; index++) {
+    const route = routes[index];
+    if (index !== _.findIndex(routes, identity(route))) {
+      throw new RouteDuplicationError(`路由 ${route.name || route.path} 重复,请检查配置`);
+    }
+
+    if (!_.isEmpty(_.get(routes, 'children'))) {
+      checkDuplication(routes.children);
+    }
   }
-}
+};
+
+checkDuplication(routes);
+
+const filterRoutes = (routes, menus, filtered = []) => {
+  for (const route of routes) {
+    for (const menu of menus) {
+      if (identity(route)(menu)) {
+        const { children: routeChildren, ...rest } = route;
+        filtered.push(rest);
+        const menuChildren = _.get(menu, 'children');
+        if (!_.isEmpty(routeChildren) && !_.isEmpty(menuChildren)) {
+          rest.children = filterRoutes(routeChildren, menuChildren);
+        }
+      }
+    }
+  }
+
+  return filtered;
+};
 
 /**
  *
@@ -30,13 +55,8 @@ for (let index = 0; index < routes.length; index++) {
  * @returns {Route[]} routes
  * @description 根据传入的menus生成路由列表, 保存到store
  */
-const getRoutes = menus => {
-  const filtered = [
-    ..._.filter(routes, route => _.some(menus, menu => menu.path === route.path)),
-    ...notFound,
-  ];
-
-  return filtered;
-};
+function getRoutes(menus) {
+  return [...filterRoutes(routes, menus), ...notFound];
+}
 
 export default getRoutes;

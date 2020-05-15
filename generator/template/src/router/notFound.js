@@ -3,7 +3,7 @@ import NotFound from '@/views/NotFound';
 
 export default [
   {
-    path: '/*',
+    path: '*',
     component: NotFound,
   },
 ];

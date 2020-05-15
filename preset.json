@@ -117,7 +117,7 @@
       "css": {
         "loaderOptions": {
           "scss": {
-            "prependData": "\n@import \"~@/style/global.scss\";\n@import \"~@/style/variables.scss\";\n@import \"~@/style/reset.scss\";\n"
+            "prependData": "\n@import \"~@/style/variables.scss\";\n@import \"~@/style/global.scss\";\n@import \"~@/style/reset.scss\";\n"
           }
         }
       },

@@ -1,11 +1,15 @@
 [
-  { "pid": -1, "path": "/about", "name": "购物车", "id": 1, "auth": "cart" },
   {
-    "pid": 1,
-    "path": "/page-template",
-    "name": "购物车列表",
-    "id": 4,
-    "auth": "cart-list"
+    "pid": -1,
+    "path": "/about",
+    "name": "购物车",
+    "id": 1,
+    "auth": "cart",
+    "children": [
+      {
+        "path": "page-template"
+      }
+    ]
   },
   {
     "pid": 4,

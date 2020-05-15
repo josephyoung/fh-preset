@@ -8,6 +8,7 @@ Vue.use(VueRouter);
 
 // 全局唯一 VueRouter 实例
 const router = new VueRouter({
+  mode: 'history',
   routes: [...login, ...notFound],
 });
 

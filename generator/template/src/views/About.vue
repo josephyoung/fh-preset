@@ -3,6 +3,8 @@
     <h1>This is an about page</h1>
     <el-button type="primary" @click="handleConfirmClick">confirm</el-button>
     <el-button type="warning" @click="handleCancelClick">cancel</el-button>
+    <router-link to="/about/page-template">children</router-link>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -12,11 +14,11 @@ export default {
   methods: {
     handleConfirmClick() {
       this.$http.get('mock/cart.json').then(resp => {
-        console.log({ resp });
+        console.log({ resp }, this.$router);
       });
     },
     handleCancelClick() {
-      console.log(this.$store.state._menus);
+      this.$store.dispatch('logout');
     },
   },
 };

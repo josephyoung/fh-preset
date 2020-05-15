@@ -2,3 +2,8 @@ body {
   font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB,
     Microsoft YaHei, SimSun, sans-serif;
 }
+
+/* npgrogress 样式覆盖 */
+#nprogress .bar.bar {
+  background-color: $vue-green;
+}
