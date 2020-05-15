@@ -16,7 +16,11 @@ function httpFactory({ origin = false } = {}) {
       return config;
     },
     e => {
-      errorHandler(e, `接口 ${_.get(e, 'config.url')} `, '发送错误, 请检查网络后重试');
+      errorHandler(
+        e,
+        `接口 ${_.get(e, 'config.url')} `,
+        '发送错误, 请检查网络后重试'
+      );
       return Promise.reject(e);
     }
   );
@@ -30,7 +34,11 @@ function httpFactory({ origin = false } = {}) {
       return Vue.prototype.$lodash.get(resp, 'data');
     },
     e => {
-      errorHandler(e, `接口 ${_.get(e, 'config.url')} `, '返回错误, 请检查网络后重试');
+      errorHandler(
+        e,
+        `接口 ${_.get(e, 'config.url')} `,
+        '返回错误, 请检查网络后重试'
+      );
       return Promise.reject(e);
     }
   );

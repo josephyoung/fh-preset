@@ -1,5 +1,5 @@
 <template>
-  <div style="text-align: center;">
+  <div class="tac">
     <img alt="Vue logo" src="../assets/logo.png" />
     <HelloWorld :msg="sentence" @click="handleClick" />
   </div>

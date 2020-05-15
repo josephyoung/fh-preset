@@ -14,13 +14,16 @@ const routes = _.reduce(
 );
 
 /* path相同或name相同被认为是重复路由 */
-const identity = route1 => route2 => route1.name === route2.name || route1.path === route2.path;
+const identity = route1 => route2 =>
+  route1.name === route2.name || route1.path === route2.path;
 
 const checkDuplication = routes => {
   for (let index = 0; index < routes.length; index++) {
     const route = routes[index];
     if (index !== _.findIndex(routes, identity(route))) {
-      throw new RouteDuplicationError(`路由 ${route.name || route.path} 重复,请检查配置`);
+      throw new RouteDuplicationError(
+        `路由 ${route.name || route.path} 重复,请检查配置`
+      );
     }
 
     if (!_.isEmpty(_.get(routes, 'children'))) {

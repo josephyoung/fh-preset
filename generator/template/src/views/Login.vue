@@ -1,5 +1,5 @@
 <template>
-  <div class="login-outer tac">
+  <div class="tac">
     <el-button
       type="primary"
       @click="handleLoginClick"

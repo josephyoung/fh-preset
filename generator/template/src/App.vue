@@ -26,12 +26,6 @@
 </template>
 
 <style lang="scss">
-#app {
-  font-family: 'Microsoft YaHei', Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 #nav {
   padding: 30px;
   text-align: center;
