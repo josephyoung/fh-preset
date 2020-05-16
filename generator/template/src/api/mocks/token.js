@@ -10,10 +10,10 @@ class MockToken extends API {
 
   post({ username, password }) {
     if (this.username === username && this.password === password) {
-      return this._http(this.url);
+      return super.post({ username, password });
     }
 
-    return this._http(this.errorUrl);
+    return this._http.get(this.errorUrl);
   }
 }
 

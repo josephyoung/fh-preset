@@ -3,13 +3,17 @@
     <h1>
       This is an about page
     </h1>
-    <el-button type="primary" @click="handleConfirmClick">
-      confirm
+    <el-button type="primary" @click="handleDownloadClick">
+      download
     </el-button>
-    <el-button type="warning" @click="handleCancelClick">
-      cancel
+    <el-button type="warning" @click="handleLogoutClick">
+      logout
     </el-button>
-    <router-link to="/about/page-template">
+    <router-link
+      to="/about/page-template"
+      tag="el-button"
+      class="el-button--danger"
+    >
       children
     </router-link>
     <router-view />
@@ -17,15 +21,27 @@
 </template>
 
 <script>
+import mockDownload from '@/api/mocks/fileDownload';
+import downloadFile from '@/service/util';
+
 export default {
   name: 'About',
   methods: {
-    handleConfirmClick() {
-      this.$http.get('mock/menus.json').then(resp => {
-        console.log({ resp }, this.$router);
-      });
+    async download() {
+      const resp = await mockDownload();
+      const fileName = _.get(resp, 'headers.content-disposition', '').replace(
+        /.*filename="([^;]*)"$/,
+        '$1'
+      );
+      const fileType = _.get(resp, 'data.type');
+      downloadFile(_.get(resp, 'data'), fileName, fileType);
     },
-    handleCancelClick() {
+
+    handleDownloadClick() {
+      this.download();
+    },
+
+    handleLogoutClick() {
       this.$store.dispatch('logout');
     },
   },

@@ -1,5 +1,4 @@
 import _ from 'lodash';
-import qs from 'qs';
 import Vue from 'vue';
 import './element-ui';
 import './style/index.scss';

@@ -1,4 +1,5 @@
 import { httpFactory } from '@/service/http';
+import qs from 'qs';
 
 class API {
   constructor(url, baseUrl, origin) {
