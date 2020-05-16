@@ -8,6 +8,7 @@
     "browserslist",
     "builtins",
     "nprogress",
-    "grayscale"
+    "grayscale",
+    "msgbox"
   ]
 }

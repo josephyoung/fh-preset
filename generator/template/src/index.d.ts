@@ -1,5 +1,5 @@
-type Menu = {
-  path: string;
-  name?: string;
+import { RouteConfig } from 'vue-router';
+
+interface Menu extends RouteConfig {
   title?: string;
-};
+}

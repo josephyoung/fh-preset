@@ -1,15 +1,17 @@
-/**
- * @param {VueRouter} router
- * @description 全局路由拦截器注册
- */
+import _ from 'lodash';
 import nprogress from 'nprogress';
 import 'nprogress/nprogress.css';
+import { MessageBox } from 'element-ui';
 import getRoutes from './getRoutes';
 import store from '@/store';
 import config from '@/config';
 
 nprogress.configure({ showSpinner: false });
 
+/**
+ * 全局路由拦截器注册
+ * @param {import('vue-router/types/router').VueRouter} router
+ */
 export default router => {
   router.beforeEach((to, _from, next) => {
     if (store.getters.token) {
@@ -29,8 +31,16 @@ export default router => {
         next();
       }
     } else {
+      store.commit('setAuth', false);
+      store.commit('setMenus', []);
       if ('login' !== to.name) {
-        next({ name: 'login', query: { redirect: to.path } });
+        MessageBox.alert('您还未登录或登录已过期, 请登录', '未认证', {
+          confirmButtonText: '去登录',
+          showClose: false,
+          lockScroll: true,
+        }).then(() => {
+          next({ name: 'login', query: { redirect: to.path } });
+        });
       } else {
         next();
       }
