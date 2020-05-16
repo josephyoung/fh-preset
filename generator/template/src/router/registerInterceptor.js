@@ -3,6 +3,8 @@ import nprogress from 'nprogress';
 import 'nprogress/nprogress.css';
 import { MessageBox } from 'element-ui';
 import getRoutes from './getRoutes';
+import addRoutes from './addRoutes';
+import routerReset from './routerReset';
 import store from '@/store';
 import config from '@/config';
 
@@ -25,7 +27,7 @@ export default router => {
         store.commit('setMenus', store.getters.menus);
         store.commit('setToken', store.getters.token);
         const routes = getRoutes(store.getters.menus);
-        router.addRoutes(routes);
+        addRoutes(routes);
         next({ ...to, replace: true });
       } else {
         next();
@@ -33,6 +35,7 @@ export default router => {
     } else {
       store.commit('setAuth', false);
       store.commit('setMenus', []);
+      routerReset(true);
       if ('login' !== to.name) {
         MessageBox.alert('您还未登录或登录已过期, 请登录', '未认证', {
           confirmButtonText: '去登录',

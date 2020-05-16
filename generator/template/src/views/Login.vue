@@ -29,7 +29,7 @@
 
 <script>
 import getRoutes from '@/router/getRoutes';
-import routerReset from '@/router/routerReset.js';
+import addRoutes from '@/router/addRoutes';
 import apiMenus from '@/api/mocks/menus';
 import apiToken from '@/api/mocks/token';
 
@@ -57,7 +57,7 @@ export default {
       this.$store.commit('setAuth', true);
       this.$store.commit('setMenus', menus);
       const routes = getRoutes(menus);
-      this.$router.addRoutes(routes);
+      addRoutes(routes);
     },
 
     async login() {
