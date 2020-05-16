@@ -3,6 +3,7 @@
   "exclude": ["node_modules", "dist", "./src/libs"],
   "compilerOptions": {
     "baseUrl": "./",
+    "allowSyntheticDefaultImports": true,
     "paths": {
       "@/*": ["src/*"]
     }
