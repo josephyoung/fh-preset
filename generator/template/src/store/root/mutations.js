@@ -17,4 +17,9 @@ export default {
     state._auth = value;
     sessionStorage.setItem('auth', value);
   },
+
+  setToken(state, value) {
+    state._token = value;
+    localStorage.setItem('token', value);
+  },
 };

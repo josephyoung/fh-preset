@@ -1,1 +1,1 @@
-export { http, httpOrigin } from './http';
+export { http, httpOrigin, httpFactory } from './http';

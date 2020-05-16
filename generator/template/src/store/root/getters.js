@@ -14,4 +14,12 @@ export default {
 
     return state._auth;
   },
+
+  token(state) {
+    if (state._token) {
+      return state._token;
+    }
+
+    return localStorage.getItem('token');
+  },
 };

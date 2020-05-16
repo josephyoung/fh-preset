@@ -5,6 +5,7 @@ export default {
   logout({ commit }) {
     commit('setMenus', []);
     commit('setAuth', false);
+    commit('setToken', '');
     routerReset(true);
     if (_.get(router, 'history.current.name') !== 'login') {
       router.push('/login');

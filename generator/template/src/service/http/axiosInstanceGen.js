@@ -1,11 +1,12 @@
 import axios from 'axios';
+import store from '@/store';
 
 const baseUrl = process.env.BASE_URL;
-const token = localStorage.getItem('authorization');
+const token = store.getters.token;
 
-const instanceGen = () =>
+const instanceGen = (baseURL = baseUrl) =>
   axios.create({
-    baseURL: baseUrl,
+    baseURL,
     headers: {
       authorization: token,
     },

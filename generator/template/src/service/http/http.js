@@ -2,9 +2,9 @@ import Vue from 'vue';
 import instanceGen from './axiosInstanceGen';
 import errorHandler from './errorHandler';
 
-function httpFactory({ origin = false } = {}) {
+function httpFactory({ origin = false, baseUrl } = {}) {
   let sendOriginResponse = origin;
-  const http = instanceGen();
+  const http = instanceGen(baseUrl);
 
   http.interceptors.request.use(
     config => {
@@ -52,4 +52,4 @@ const http = httpFactory();
 // 返回原始response, 用于需要response原始返回值的场合, 如: 异步下载获取headers中的filename
 const httpOrigin = httpFactory({ origin: true });
 
-export { http, httpOrigin };
+export { http, httpOrigin, httpFactory };

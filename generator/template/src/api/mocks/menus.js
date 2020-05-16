@@ -1,5 +1,4 @@
-const url = 'mock/menus.json';
-/**
- * @param {Vue} vm
- */
-export default vm => vm.$http.get(url);
+import API from '@/api/API';
+const menus = new API('mock/menus.json');
+
+export default menus;

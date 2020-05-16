@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div id="nav">
+    <div id="nav" v-if="$store.getters.auth">
       <router-link to="/home">
         Home
       </router-link>

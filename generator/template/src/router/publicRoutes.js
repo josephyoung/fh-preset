@@ -1,4 +1,5 @@
 import Login from '@/views/Login.vue';
+import Page404 from '@/views/404.vue';
 
 export default [
   {
@@ -9,5 +10,9 @@ export default [
     path: '/login',
     name: 'login',
     component: Login,
+  },
+  {
+    path: '*',
+    component: Page404,
   },
 ];
