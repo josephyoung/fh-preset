@@ -1,7 +1,7 @@
 export default {
   menus(state) {
     if (_.isEmpty(state._menus)) {
-      return JSON.parse(sessionStorage.getItem('menus'));
+      return JSON.parse(sessionStorage.getItem('menus')) || [];
     }
 
     return state._menus;

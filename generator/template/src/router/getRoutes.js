@@ -39,7 +39,6 @@ const filterRoutes = (routes, menus, filtered = []) => {
 /**
  * 根据menus过滤权限,生成路由表
  * @param {Array<Menu>} menus
- * @param {Vue} vm
  */
 const getRoutes = _.curry(filterRoutes)(routes);
 

@@ -68,7 +68,7 @@ export default {
         if (this.query.redirect) {
           this.$router.push({ path: this.query.redirect });
         } else {
-          this.$router.push({ name: 'home' });
+          this.$router.push('/home');
         }
       } else {
         this.$message.error(result.msg);

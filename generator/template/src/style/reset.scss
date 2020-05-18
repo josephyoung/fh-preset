@@ -1,6 +1,13 @@
+html {
+  height: 100%;
+}
+
 body {
   font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB,
     Microsoft YaHei, SimSun, sans-serif;
+  height: 100%;
+  padding: 0;
+  margin: 0;
 }
 
 /* npgrogress 样式覆盖 */

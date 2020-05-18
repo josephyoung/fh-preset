@@ -1,29 +1,17 @@
 <template>
-  <div id="app">
-    <div id="nav" v-if="$store.getters.auth">
-      <router-link to="/home">
-        Home
-      </router-link>
-      |
-      <router-link to="/about">
-        About
-      </router-link>
-      |
-      <router-link to="/page-template">
-        page template
-      </router-link>
-      |
-      <router-link to="/login">
-        logout
-      </router-link>
-      |
-      <router-link to="/404">
-        404
-      </router-link>
-    </div>
-    <router-view />
+  <div id="app" class="h100p">
+    <layout />
   </div>
 </template>
+
+<script>
+import Layout from './views/layout';
+
+export default {
+  name: 'App',
+  components: { Layout },
+};
+</script>
 
 <style lang="scss">
 #nav {

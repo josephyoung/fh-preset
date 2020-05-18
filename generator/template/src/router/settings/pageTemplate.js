@@ -6,6 +6,6 @@ export default [
     path: '/page-template',
     name: 'page-template',
     component: () =>
-      import(/* webpackChunkName: "other-routes" */ '@/views/PageTemplate'),
+      import(/* webpackChunkName: "other-routes" */ '@/views/page-template'),
   },
 ];

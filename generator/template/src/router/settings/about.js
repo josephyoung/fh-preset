@@ -6,8 +6,19 @@ export default [
       import(/* webpackChunkName: "other-routes" */ '@/views/About.vue'),
     children: [
       {
+        path: 'about-index',
+        name: 'about-index',
+        component: () =>
+          import(
+            /* webpackChunkName: "other-routes" */ '@/views/AboutIndex.vue'
+          ),
+      },
+      {
         path: 'page-template',
-        component: () => import('@/views/PageTemplate'),
+        component: () =>
+          import(
+            /* webpackChunkName: "other-routes" */ '@/views/page-template'
+          ),
       },
     ],
   },
