@@ -1,5 +1,5 @@
 /**
- * 根据menus过滤权限,生成路由表
+ * 根据后台返回的路由表,生成实际路由表
  */
 import identity from './routesIdentity';
 import routes from './routes';
@@ -7,15 +7,15 @@ import routes from './routes';
 /**
  * 路由表过滤
  * @param {RouteConfig[]} routes
- * @param {Menu[]} menus
+ * @param {[]} userRouts
  * @param {RouteConfig[]} filtered
  */
-const filterRoutes = (routes, menus, filtered = []) => {
+const filterRoutes = (routes, userRoutes, filtered = []) => {
   for (const route of routes) {
-    for (const menu of menus) {
-      if (identity(route)(menu)) {
+    for (const userRoute of userRoutes) {
+      if (identity(route)(userRoute)) {
         const { children: routeChildren, ...rest } = route;
-        const title = _.get(menu, 'title');
+        const title = _.get(userRoute, 'title');
         if (title) {
           if (rest.meta) {
             rest.meta.title = title;
@@ -23,11 +23,12 @@ const filterRoutes = (routes, menus, filtered = []) => {
             rest.meta = { title };
           }
         }
+        rest.meta.isMenu = _.get(userRoute, 'isMenu', false);
         filtered.push(rest);
 
-        const menuChildren = _.get(menu, 'children');
-        if (!_.isEmpty(routeChildren) && !_.isEmpty(menuChildren)) {
-          rest.children = filterRoutes(routeChildren, menuChildren);
+        const userRouteChildren = _.get(userRoute, 'children');
+        if (!_.isEmpty(routeChildren) && !_.isEmpty(userRouteChildren)) {
+          rest.children = filterRoutes(routeChildren, userRouteChildren);
         }
       }
     }
@@ -37,8 +38,8 @@ const filterRoutes = (routes, menus, filtered = []) => {
 };
 
 /**
- * 根据menus过滤权限,生成路由表
- * @param {Array<Menu>} menus
+ * 根据后台返回的路由表,生成实际路由表
+ * @param routes
  */
 const getRoutes = _.curry(filterRoutes)(routes);
 

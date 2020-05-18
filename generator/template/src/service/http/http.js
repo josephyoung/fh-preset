@@ -19,7 +19,7 @@ function httpFactory({ origin = false, baseUrl } = {}) {
       errorHandler(
         e,
         `接口 ${_.get(e, 'config.url')} `,
-        '发送错误, 请检查网络后重试'
+        `: ${_.get(e, 'response.data.error.message', '请检查网络后重试')}`
       );
       return Promise.reject(e);
     }
@@ -37,7 +37,7 @@ function httpFactory({ origin = false, baseUrl } = {}) {
       errorHandler(
         e,
         `接口 ${_.get(e, 'config.url')} `,
-        '返回错误, 请检查网络后重试'
+        `: ${_.get(e, 'response.data.error.message', '请检查网络后重试')}`
       );
       return Promise.reject(e);
     }

@@ -53,10 +53,10 @@ export default {
   },
   methods: {
     async routerGen() {
-      const menus = await apiMenus.get();
+      const userRoutes = await apiMenus.get();
       this.$store.commit('setAuth', true);
-      this.$store.commit('setMenus', menus);
-      const routes = getRoutes(menus);
+      this.$store.commit('setRoutes', userRoutes);
+      const routes = getRoutes(userRoutes);
       addRoutes(routes);
     },
 

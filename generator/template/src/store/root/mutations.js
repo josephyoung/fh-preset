@@ -8,9 +8,9 @@ export default {
     }
   },
 
-  setMenus(state, value) {
-    state._menus = value;
-    sessionStorage.setItem('menus', JSON.stringify(value));
+  setRoutes(state, value) {
+    state._routes = value;
+    sessionStorage.setItem('routes', JSON.stringify(value));
   },
 
   setAuth(state, value) {

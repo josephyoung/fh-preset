@@ -24,9 +24,9 @@ export default router => {
       if (store.getters.auth && !store.state._auth) {
         nprogress.start();
         store.commit('setAuth', store.getters.auth);
-        store.commit('setMenus', store.getters.menus);
+        store.commit('setRoutes', store.getters.routes);
         store.commit('setToken', store.getters.token);
-        const routes = getRoutes(store.getters.menus);
+        const routes = getRoutes(store.getters.routes);
         addRoutes(routes);
         next({ ...to, replace: true });
       } else {
@@ -34,7 +34,7 @@ export default router => {
       }
     } else {
       store.commit('setAuth', false);
-      store.commit('setMenus', []);
+      store.commit('setRoutes', []);
       routerReset(true);
       if ('login' !== to.name) {
         MessageBox.alert('您还未登录或登录已过期, 请登录', '未认证', {

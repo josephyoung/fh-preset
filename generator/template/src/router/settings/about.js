@@ -2,11 +2,12 @@ export default [
   {
     path: '/about',
     name: 'about',
+    redirect: '/about/about-index',
     component: () =>
       import(/* webpackChunkName: "other-routes" */ '@/views/About.vue'),
     children: [
       {
-        path: 'about-index',
+        path: 'about-index/:id',
         name: 'about-index',
         component: () =>
           import(

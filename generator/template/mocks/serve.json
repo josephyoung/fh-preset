@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "json/:id",
+      "destination": "json/:id.json"
+    }
+  ]
+}

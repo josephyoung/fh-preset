@@ -3,7 +3,7 @@ import routerReset from '@/router/routerReset';
 
 export default {
   logout({ commit }) {
-    commit('setMenus', []);
+    commit('setRoutes', []);
     commit('setAuth', false);
     commit('setToken', '');
     routerReset(true);

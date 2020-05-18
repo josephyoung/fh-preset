@@ -31,7 +31,11 @@ export default {
 
   computed: {
     currentPath() {
-      return this.$route.path;
+      if (this.$route.meta.isMenu) {
+        return this.$route.path;
+      }
+
+      return _.replace(this.$route.path, /\/[^/]+$/, '');
     },
 
     menuShow() {
@@ -39,7 +43,7 @@ export default {
     },
 
     asideWidth() {
-      return this.isCollapse ? '65px' : '200px';
+      return this.isCollapse ? '65px' : '250px';
     },
   },
 };

@@ -1,10 +1,29 @@
+function getMenus(routes) {
+  let res = [];
+  for (const route of routes) {
+    const { children, ...rest } = route;
+    if (rest.isMenu) {
+      res.push(rest);
+    }
+    if (Array.isArray(route.children)) {
+      rest.children = getMenus(route.children);
+    }
+  }
+
+  return res;
+}
+
 export default {
-  menus(state) {
-    if (_.isEmpty(state._menus)) {
-      return JSON.parse(sessionStorage.getItem('menus')) || [];
+  routes(state) {
+    if (_.isEmpty(state._routes)) {
+      return JSON.parse(sessionStorage.getItem('routes')) || [];
     }
 
-    return state._menus;
+    return state._routes;
+  },
+
+  menus(_state, getters) {
+    return getMenus(getters.routes);
   },
 
   auth(state) {

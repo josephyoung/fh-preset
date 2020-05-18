@@ -1,0 +1,45 @@
+[
+  {
+    "path": "/home",
+    "title": "首页",
+    "name": "home",
+    "icon": "el-icon-location",
+    "isMenu": true
+  },
+  {
+    "path": "/about",
+    "name": "about",
+    "title": "关于",
+    "icon": "el-icon-menu",
+    "isMenu": true,
+    "children": [
+      {
+        "path": "about-index/1234",
+        "name": "about-index",
+        "title": "关于首页",
+        "icon": "el-icon-document",
+        "isMenu": true
+      },
+      {
+        "path": "page-template",
+        "name": "about-page-template",
+        "title": "模板",
+        "icon": "el-icon-document"
+      }
+    ]
+  },
+  {
+    "path": "/page-template",
+    "name": "page-template",
+    "title": "页面模板",
+    "icon": "el-icon-setting",
+    "isMenu": true
+  },
+  {
+    "path": "/test",
+    "name": "test",
+    "title": "测试",
+    "icon": "el-icon-setting",
+    "isMenu": true
+  }
+]
