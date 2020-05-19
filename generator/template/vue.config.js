@@ -5,7 +5,7 @@ module.exports = {
     name: config.name,
     devtool: 'source-map',
   },
-  publicPath: '/',
+  publicPath: config.baseUrl,
   outputDir: 'dist',
   assetsDir: '',
   pages: {
@@ -25,12 +25,21 @@ module.exports = {
     },
   },
   devServer: {
+    host: 'localhost',
+    port: '3000',
     proxy: {
       '/mock': {
         target: 'http://localhost:5000',
         changeOrigin: true,
         pathRewrite: {
           '^/mock': '',
+        },
+      },
+      '/api': {
+        target: 'http://localhost:8080',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api': '',
         },
       },
     },
