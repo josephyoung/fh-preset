@@ -24,6 +24,10 @@ const filterRoutes = (routes, userRoutes, filtered = []) => {
           }
         }
         rest.meta.isMenu = _.get(userRoute, 'isMenu', false);
+        const activeMenu = _.get(userRoute, 'activeMenu');
+        if (activeMenu) {
+          rest.meta.activeMenu = activeMenu;
+        }
         filtered.push(rest);
 
         const userRouteChildren = _.get(userRoute, 'children');

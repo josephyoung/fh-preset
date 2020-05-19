@@ -29,13 +29,15 @@ export default {
     };
   },
 
+  watch: {},
+
   computed: {
     currentPath() {
       if (this.$route.meta.isMenu) {
         return this.$route.path;
       }
 
-      return _.replace(this.$route.path, /\/[^/]+$/, '');
+      return this.$route.meta.activeMenu;
     },
 
     menuShow() {

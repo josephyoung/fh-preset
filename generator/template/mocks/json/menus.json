@@ -11,22 +11,7 @@
     "name": "about",
     "title": "关于",
     "icon": "el-icon-menu",
-    "isMenu": true,
-    "children": [
-      {
-        "path": "about-index/1234",
-        "name": "about-index",
-        "title": "关于首页",
-        "icon": "el-icon-document",
-        "isMenu": true
-      },
-      {
-        "path": "page-template",
-        "name": "about-page-template",
-        "title": "模板",
-        "icon": "el-icon-document"
-      }
-    ]
+    "isMenu": true
   },
   {
     "path": "/page-template",
@@ -40,6 +25,22 @@
     "name": "test",
     "title": "测试",
     "icon": "el-icon-setting",
-    "isMenu": true
+    "isMenu": true,
+    "children": [
+      {
+        "path": "test-index/1234",
+        "name": "test-index",
+        "title": "测试首页",
+        "icon": "el-icon-document",
+        "isMenu": true
+      },
+      {
+        "path": "page-template",
+        "name": "about-page-template",
+        "title": "模板",
+        "icon": "el-icon-document",
+        "activeMenu": "/test/test-index/1234"
+      }
+    ]
   }
 ]

@@ -1,7 +1,7 @@
 <template>
   <div id="about">
     <h1>
-      This is an about page
+      This is a Test page
     </h1>
     <el-button type="primary" @click="handleDownloadClick">
       download
@@ -13,7 +13,7 @@
       clearToken
     </el-button>
     <router-link
-      to="/about/page-template"
+      to="/test/page-template"
       tag="el-button"
       class="el-button--danger"
     >
@@ -27,7 +27,7 @@ import mockDownload from '@/api/mocks/fileDownload';
 import { downloadFile } from '@/service/util';
 
 export default {
-  name: 'AboutIndex',
+  name: 'TestIndex',
   methods: {
     async download() {
       const resp = await mockDownload();
