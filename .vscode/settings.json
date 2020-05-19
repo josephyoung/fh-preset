@@ -9,7 +9,11 @@
     "builtins",
     "grayscale",
     "msgbox",
-    "nprogress"
+    "nprogress",
+    "vetur",
+    "monospace",
+    "octref",
+    "Cascadia"
   ],
   "editor.rulers": [80],
   "emmet.includeLanguages": {
