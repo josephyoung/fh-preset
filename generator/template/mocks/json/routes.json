@@ -31,7 +31,14 @@
         "path": "test-index/1234",
         "name": "test-index",
         "title": "测试首页",
-        "icon": "el-icon-document",
+        "icon": "el-icon-star-on",
+        "isMenu": true
+      },
+      {
+        "path": "test-error",
+        "name": "test-error",
+        "title": "测试错误日志",
+        "icon": "el-icon-warning",
         "isMenu": true
       },
       {

@@ -22,4 +22,12 @@ export default {
     state._token = value;
     localStorage.setItem('token', value);
   },
+
+  addErrorLog(state, log) {
+    state.errorLogs.push(log);
+  },
+
+  clearErrorLogs(state) {
+    state.errorLogs.splice(0);
+  },
 };

@@ -30,7 +30,7 @@
 <script>
 import getRoutes from '@/router/getRoutes';
 import addRoutes from '@/router/addRoutes';
-import apiMenus from '@/api/mocks/menus';
+import apiRoutes from '@/api/mocks/routes';
 import apiToken from '@/api/mocks/token';
 
 export default {
@@ -53,7 +53,7 @@ export default {
   },
   methods: {
     async routerGen() {
-      const userRoutes = await apiMenus.get();
+      const userRoutes = await apiRoutes.get();
       this.$store.commit('setAuth', true);
       this.$store.commit('setRoutes', userRoutes);
       const routes = getRoutes(userRoutes);

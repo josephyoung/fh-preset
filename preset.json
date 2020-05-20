@@ -85,6 +85,8 @@
       "since 2016",
       "edge >= 12",
       "not ie <= 10",
+      "chrome >= 59",
+      "firefox >= 59",
       "not dead",
       "Android >= 4",
       "iOs >= 8"

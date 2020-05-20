@@ -11,4 +11,12 @@ export default {
       router.push('/login');
     }
   },
+
+  addErrorLog({ commit }, log) {
+    commit('addErrorLog', log);
+  },
+
+  clearErrorLogs({ commit }) {
+    commit('clearErrorLogs');
+  },
 };
