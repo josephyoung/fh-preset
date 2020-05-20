@@ -9,6 +9,90 @@
     "builtins",
     "grayscale",
     "msgbox",
-    "nprogress"
-  ]
+    "nprogress",
+    "vetur",
+    "monospace",
+    "octref",
+    "Cascadia"
+  ],
+  "editor.rulers": [80],
+  "emmet.includeLanguages": {
+    "vue-html": "html",
+    "javascript": "javascriptreact"
+  },
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.syntaxProfiles": {
+    "jsx": {
+      "self_closing_tag": true,
+      "inline_break": 1,
+      "attr_quotes": "single"
+    }
+  },
+  "emmet.showSuggestionsAsSnippets": true,
+  "editor.snippetSuggestions": "top",
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": true,
+    "strings": true
+  },
+  "editor.wordWrap": "on",
+  "vetur.completion.autoImport": false,
+  "[vue]": {
+    "editor.defaultFormatter": "octref.vetur"
+  },
+  "editor.fontFamily": "'Cascadia Code', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+  "workbench.editor.tabSizing": "shrink",
+  "editor.acceptSuggestionOnEnter": "smart",
+  "editor.fontLigatures": true,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "vetur.format.defaultFormatter.html": "prettier",
+  "bracket-pair-colorizer-2.activeScopeCSS": [
+    "borderStyle : solid",
+    "borderWidth : 1px",
+    "borderColor : {color}",
+    "opacity: 0.5"
+  ],
+  "bracket-pair-colorizer-2.colors": ["#ff9900", "Orchid", "LightSkyBlue"],
+  "highlight-matching-tag.styles": {
+    "opening": {
+      "name": {
+        "underline": "#42b983"
+      }
+    },
+    "closing": {
+      "full": {
+        "custom": {
+          "dark": {
+            "borderWidth": "0 0 1px 0",
+            "borderColor": "white",
+            "borderStyle": "solid",
+            "borderRadius": "4px",
+            "right": "10px"
+          },
+          "light": {
+            "borderWidth": "0 0 1px 0",
+            "borderColor": "#42b983",
+            "borderStyle": "solid",
+            "borderRadius": "4px",
+            "right": "10px"
+          }
+        }
+      }
+    }
+  },
+  "highlight-matching-tag.highlightSelfClosing": true,
+  "highlight-matching-tag.customEmptyElements": ["custom", "no-content"],
+  "path-intellisense.mappings": {
+    "@": "${workspaceRoot}/src",
+    "/": "${workspaceRoot}"
+  },
+  "workbench.iconTheme": "vscode-icons",
+  "cSpell.enableFiletypes": ["vue"],
+  "files.autoSave": "onWindowChange",
+  "vetur.completion.tagCasing": "initial"
 }
