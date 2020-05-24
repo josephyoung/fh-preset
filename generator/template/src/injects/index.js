@@ -5,7 +5,12 @@
 
 import Vue from 'vue';
 import { HelloWorld } from '@/components';
-import { pluginHttp, pluginLodash, pluginLodashFp } from './plugins';
+import {
+  pluginHttp,
+  pluginLodash,
+  pluginLodashFp,
+  pluginDayjs,
+} from './plugins';
 
 /* 原型属性/方法 Vue.prototype (使用 $ 前缀) */
 Vue.prototype.$env = Object.freeze(process.env);
@@ -26,3 +31,6 @@ Vue.use(pluginLodash);
 
 // Vue.prototype.$fp
 Vue.use(pluginLodashFp);
+
+// Vue.prototype.$dayjs
+Vue.use(pluginDayjs);

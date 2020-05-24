@@ -1,7 +1,6 @@
 import fp from 'lodash/fp';
+import install from './install';
 
 export default {
-  install(Vue, name = '$fp') {
-    Object.defineProperty(Vue.prototype, name, { value: fp });
-  },
+  install: install('$fp', fp),
 };

@@ -1,7 +1,6 @@
-import _ from 'lodash';
+import lodash from 'lodash';
+import install from './install';
 
 export default {
-  install(Vue, name = '$lodash') {
-    Object.defineProperty(Vue.prototype, name, { value: _ });
-  },
+  install: install('$lodash', lodash),
 };
