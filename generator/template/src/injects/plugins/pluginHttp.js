@@ -1,7 +1,6 @@
 import { http } from '@/service';
+import install from './install';
 
 export default {
-  install(Vue, name = '$http') {
-    Object.defineProperty(Vue.prototype, name, { value: http });
-  },
+  install: install('$http', http),
 };
